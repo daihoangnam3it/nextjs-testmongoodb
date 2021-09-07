@@ -9,6 +9,7 @@ export async function getStaticProps(context) {
   }
 }
 export default function Home({ properties,isConnected }) {
+  console.log(properties);
   return (
     <div className="container">
       <Head>
@@ -20,9 +21,12 @@ export default function Home({ properties,isConnected }) {
         <h1 className="title">
           Welcome to <a href="https://nextjs.org">Next.js with MongoDB!</a>
         </h1>
-
+        <ul>
+          {properties.map(el=><li key={el._id}>{el.name}</li>)}
+        </ul>
         {isConnected ? (
           <h2 className="subtitle">You are connected to MongoDB</h2>
+
         ) : (
           <h2 className="subtitle">
             You are NOT connected to MongoDB. Check the <code>README.md</code>{' '}
