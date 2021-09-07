@@ -4,27 +4,26 @@ const LoadingPage = () => {
   return (
     <div className='container'>
       <div className='dot dot1'>
-      <img ref={list} src="/images/dot.png" alt="" className="img-1"/>
-      <img ref={list} src="/images/earth (1).png" alt="" className="img-2"/>
+      <img  src="/images/dot.png" alt="" className="img-1"/>
+      <img  src="/images/earth (1).png" alt="" className="img-2"/>
       </div>
       <div className='dot dot2'>
-      <img ref={list} src="/images/custom.png" alt="" className="img-1"/>
-      <img ref={list} src="/images/snail.png" alt="" className="img-2"/>
+      <img  src="/images/custom.png" alt="" className="img-1"/>
+      <img  src="/images/snail.png" alt="" className="img-2"/>
       </div>
       <div className='dot dot3'>
-      <img ref={list} src="/images/bleach.png" alt="" className="img-1"/>
-      <img ref={list} src="/images/paw.png" alt="" className="img-2"/>
+      <img  src="/images/bleach.png" alt="" className="img-1"/>
+      <img  src="/images/paw.png" alt="" className="img-2"/>
       </div>
       <div className='dot dot4'>
-      <img ref={list} src="/images/dot.png" alt="" className="img-1"/>
-      <img ref={list} src="/images/farmer.png" alt="" className="img-2"/>
+      <img  src="/images/dot.png" alt="" className="img-1"/>
+      <img  src="/images/farmer.png" alt="" className="img-2"/>
       </div>
       <div className='dot dot5'>
-      <img ref={list} src="/images/hexagon.png" alt="" className="img-1"/>
-      <img ref={list} src="/images/potato.png" alt="" className="img-2"/>
+      <img  src="/images/hexagon.png" alt="" className="img-1"/>
+      <img  src="/images/potato.png" alt="" className="img-2"/>
       </div>
       <style jsx>{`
-   
         .container {
           width: 100%;
           background-color: rgb(235, 247, 127);
@@ -33,6 +32,11 @@ const LoadingPage = () => {
           display: flex;
           justify-content: space-around;
           align-items: center;
+          position: fixed;
+          top:0;
+          left:0;
+          z-index:999;
+          overflow:hidden;
         }
         .dot {
           width: 50px;
