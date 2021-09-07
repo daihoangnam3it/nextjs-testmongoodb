@@ -1,5 +1,7 @@
 import Head from 'next/head'
+import { useEffect, useState } from 'react';
 import connectDB from '../lib/mongodb'
+import LoadingPage from '../components/LoadingPage';
 export async function getStaticProps(context) {
   const {db,connect} = await connectDB();
   const data =await db.collection('listingsAndReviews').find({}).limit(20).toArray();
@@ -9,9 +11,13 @@ export async function getStaticProps(context) {
   }
 }
 export default function Home({ properties,isConnected }) {
-  console.log(properties);
+  const [loading, setLoading] = useState(true)
+  useEffect(()=>{
+    setTimeout(()=>setLoading(false),3000)
+  },[loading])
   return (
     <div className="container">
+      {loading?<LoadingPage/>:''}
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
